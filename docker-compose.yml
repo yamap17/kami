@@ -1,0 +1,35 @@
+version: "3.9"
+services:
+  db:
+    image: mysql:8.0.31
+    ports:
+      - '3307:3307'
+    volumes:
+      - mysql-data:/var/lib/mysql
+    environment:
+      - MYSQL_ALLOW_EMPTY_PASSWORD=true
+  api:
+    build: ./api
+    volumes:
+      - ./api:/api
+      - bundle-data:/usr/local/bundle
+    ports:
+      - "3033:3033"
+    environment:
+      - DATABASE_HOST=db
+      - MYSQL_PASSWORD=password
+    stdin_open: true
+    tty: true
+    links:
+      - db
+  front:
+    build: ./front
+    command: npm run dev
+    volumes:
+      - ./front:/front
+    ports:
+      - "8000:8000"
+    tty: true
+volumes:
+  bundle-data:
+  mysql-data:
