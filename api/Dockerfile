@@ -5,8 +5,8 @@ COPY Gemfile* /api/
 
 RUN apk update && \
     apk upgrade && \
-    apk add --no-cache gcompat nodejs yarn tzdata curl git bash mysql-dev && \
-    apk add --no-cache -t .build-packages --no-cache libxslt-dev libxml2-dev build-base curl-dev mysql-client && \
+    apk add --no-cache build-base gcompat openssl nodejs yarn tzdata curl git bash mysql-dev && \
+    apk add --no-cache -t .build-packages --no-cache libxslt-dev libxml2-dev curl-dev mysql-client && \
     bundle install -j4 && \
     apk del --purge .build-packages
 
