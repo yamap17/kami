@@ -1,0 +1,14 @@
+type TodoItem {
+  id: Int!
+  title: String!
+  completed: Boolean!
+}
+
+type Query {
+  TodoItems: [TodoItem!]!
+}
+
+type Mutation {
+  addTodoItem(title: String!): TodoItem
+  completeTodoItem(id: Int!): TodoItem
+}

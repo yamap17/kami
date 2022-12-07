@@ -1,28 +1,31 @@
-import React, { useState } from 'react';
+import { useEffect, useState } from 'react'
+import { useQuery, useMutation } from "@apollo/client";
 import TodoList from './TodoList';
-
-// type Props = {
-//   items: TodoItem[]
-// }
+import { GetAllTodoItemsDocument, TodoItem, AddTodoItemDocument, CompleteTodoItemDocument } from '../graphql/types';
 
 const TodoApp: React.FC = () => {
-  const [todoItems, setTodos] = useState([
-    {
-      id: 1,
-      title: 'TODO 1',
-      completed: false,
-    },
-    {
-      id: 2,
-      title: 'TODO 2',
-      completed: false,
-    },
-  ]);
+  const [todoItems, setTodoItems] = useState<TodoItem[]>([])
+  const { loading, error, data } = useQuery(GetAllTodoItemsDocument)
+
+  console.log(loading)
+  console.log(error)
+
+  if (loading) return <p>Loading...</p>;
+  if (error) return <p>Error: {JSON.stringify(error)}</p>;
+
+  const { TodoItems } = data;
+  setTodoItems(TodoItems)
 
   const [filter, setFilter] = useState('all');
 
   const handleTodoClick = (id: number) => {
-    setTodos(
+    const [completeTodoItem, {}] = useMutation(CompleteTodoItemDocument);
+    completeTodoItem({
+      variables: {
+        id: id,
+      },
+    });
+    setTodoItems(
       todoItems.map((todoItem) =>
       todoItem.id === id ? { ...todoItem, completed: !todoItem.completed } : todoItem
       )
@@ -33,8 +36,14 @@ const TodoApp: React.FC = () => {
     setFilter(e.target.value);
   };
 
-  const handleAddTodo = (title: string) => {
-    setTodos([...todoItems, { id: Date.now(), title, completed: false }]);
+  const handleAddTodo = async (title: string) => {
+    const [addTodoItem, { data }] = await useMutation(AddTodoItemDocument);
+    addTodoItem({
+      variables: {
+        title: title,
+      },
+    })
+    setTodoItems([...todoItems, data.TodoItem]);
   };
 
   const filteredTodos = todoItems.filter((todoItem) => {

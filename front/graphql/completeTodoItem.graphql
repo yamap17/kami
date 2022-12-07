@@ -1,0 +1,7 @@
+mutation CompleteTodoItem($id: Int!) {
+  completeTodoItem(id: $id) {
+    id
+    title
+    completed
+  }
+}

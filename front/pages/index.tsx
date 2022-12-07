@@ -1,13 +1,13 @@
-import { GetStaticProps } from 'next'
-import Link from 'next/link'
-
 import Layout from '../components/Layout'
 import TodoApp from '../components/TodoApp'
-
+import { ApolloProvider } from "@apollo/client";
+import client from "../config/apolloClient";
 
 const IndexPage = () => (
   <Layout title="TODO List | Next.js + TypeScript Example">
-    <TodoApp />
+    <ApolloProvider client={client}>
+      <TodoApp />
+    </ApolloProvider>
   </Layout>
 )
 
