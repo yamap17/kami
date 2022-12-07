@@ -194,7 +194,7 @@ DEPENDENCIES
   debug
   graphiql-rails
   graphql
-  graphql-ruby (~> 9001.0)
+  graphql-ruby
   mysql2 (~> 0.5)
   puma (~> 5.0)
   rails (~> 7.0.4)

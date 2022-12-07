@@ -30,6 +30,8 @@ services:
       - ./front:/front
     ports:
       - "8000:8000"
+    environment:
+      - API_URL=http://localhost:3033
     tty: true
 volumes:
   bundle-data:
