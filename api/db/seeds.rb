@@ -1,1 +1,1 @@
-TodoItem.create([{ name: "Watch Star Wars" }, { name: "Watch Lord of the Rings" }])
+TodoItem.create([{ title: "Watch Star Wars", completed: false }, { title: "Watch Lord of the Rings", completed: true }])
