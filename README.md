@@ -6,10 +6,7 @@ Rails+GraphQL
 * Client
 Next.js
 
-created by chatGPT
-https://chat.openai.com/chat
-
-```
+```bash
 *DBセットアップ
 $ docker compose run --rm api rails db:setup
 

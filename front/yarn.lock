@@ -594,16 +594,6 @@
     "@graphql-tools/utils" "^8.8.0"
     "tslib" "~2.4.0"
 
-"@graphql-codegen/typescript-graphql-request@^4.5.8":
-  "integrity" "sha512-XsuAA35Ou03LsklNgnIWXZ5HOHsJ5w1dBuDKtvqM9rD0cAI8x0f4TY0n6O1EraSBSvyHLP3npb1lOTPZzG2TjA=="
-  "resolved" "https://registry.npmjs.org/@graphql-codegen/typescript-graphql-request/-/typescript-graphql-request-4.5.8.tgz"
-  "version" "4.5.8"
-  dependencies:
-    "@graphql-codegen/plugin-helpers" "^2.7.2"
-    "@graphql-codegen/visitor-plugin-common" "2.13.1"
-    "auto-bind" "~4.0.0"
-    "tslib" "~2.4.0"
-
 "@graphql-codegen/typescript-operations@^2.5.8":
   "integrity" "sha512-Zp27jZjOLkoH0qy5INqrTsut5PI40OEVcKmcQ+TDHr9wDYa3M06/k907z6CuW3PjOgJBtrSTcgAEnrye8jhkJw=="
   "resolved" "https://registry.npmjs.org/@graphql-codegen/typescript-operations/-/typescript-operations-2.5.8.tgz"
@@ -612,6 +602,16 @@
     "@graphql-codegen/plugin-helpers" "^2.7.2"
     "@graphql-codegen/typescript" "^2.8.3"
     "@graphql-codegen/visitor-plugin-common" "2.13.3"
+    "auto-bind" "~4.0.0"
+    "tslib" "~2.4.0"
+
+"@graphql-codegen/typescript-urql@^3.7.3":
+  "integrity" "sha512-ndb3C/IZeLaZXI24OEQZnJ7OgzZJvBdw1xnU/ohL6/lMcC5xQgxHBpqM10MZgfTc9l9Ip7qZVCVQk3I4cvcGrA=="
+  "resolved" "https://registry.npmjs.org/@graphql-codegen/typescript-urql/-/typescript-urql-3.7.3.tgz"
+  "version" "3.7.3"
+  dependencies:
+    "@graphql-codegen/plugin-helpers" "^2.7.2"
+    "@graphql-codegen/visitor-plugin-common" "2.13.1"
     "auto-bind" "~4.0.0"
     "tslib" "~2.4.0"
 
@@ -1024,14 +1024,14 @@
   "resolved" "https://registry.npmjs.org/@next/env/-/env-13.0.6.tgz"
   "version" "13.0.6"
 
-"@next/swc-linux-arm64-gnu@13.0.6":
-  "integrity" "sha512-e8KTRnleQY1KLk5PwGV5hrmvKksCc74QRpHl5ffWnEEAtL2FE0ave5aIkXqErsPdXkiKuA/owp3LjQrP+/AH7Q=="
-  "resolved" "https://registry.npmjs.org/@next/swc-linux-arm64-gnu/-/swc-linux-arm64-gnu-13.0.6.tgz"
+"@next/swc-linux-x64-gnu@13.0.6":
+  "integrity" "sha512-kxyEXnYHpOEkFnmrlwB1QlzJtjC6sAJytKcceIyFUHbCaD3W/Qb5tnclcnHKTaFccizZRePXvV25Ok/eUSpKTw=="
+  "resolved" "https://registry.npmjs.org/@next/swc-linux-x64-gnu/-/swc-linux-x64-gnu-13.0.6.tgz"
   "version" "13.0.6"
 
-"@next/swc-linux-arm64-musl@13.0.6":
-  "integrity" "sha512-/7RF03C3mhjYpHN+pqOolgME3guiHU5T3TsejuyteqyEyzdEyLHod+jcYH6ft7UZ71a6TdOewvmbLOtzHW2O8A=="
-  "resolved" "https://registry.npmjs.org/@next/swc-linux-arm64-musl/-/swc-linux-arm64-musl-13.0.6.tgz"
+"@next/swc-linux-x64-musl@13.0.6":
+  "integrity" "sha512-N0c6gubS3WW1oYYgo02xzZnNatfVQP/CiJq2ax+DJ55ePV62IACbRCU99TZNXXg+Kos6vNW4k+/qgvkvpGDeyA=="
+  "resolved" "https://registry.npmjs.org/@next/swc-linux-x64-musl/-/swc-linux-x64-musl-13.0.6.tgz"
   "version" "13.0.6"
 
 "@nodelib/fs.scandir@2.1.5":
@@ -2058,7 +2058,7 @@
     "ts-node" "^10.8.1"
     "tslib" "^2.4.0"
 
-"graphql-request@^3.4.0 || ^4.0.0 || ^5.0.0", "graphql-request@^5.0.0":
+"graphql-request@^5.0.0":
   "integrity" "sha512-SpVEnIo2J5k2+Zf76cUkdvIRaq5FMZvGQYnA4lUWYbc99m+fHh4CZYRRO/Ff4tCLQ613fzCm3SiDT64ubW5Gyw=="
   "resolved" "https://registry.npmjs.org/graphql-request/-/graphql-request-5.0.0.tgz"
   "version" "5.0.0"

@@ -1,6 +1,6 @@
 module Types
   class MutationType < Types::BaseObject
-    field :AddTodoItem, mutation: Mutations::AddTodoItem
-    field :CompleteTodoItem, mutation: Mutations::CompleteTodoItem
+    field :add_todo_item, mutation: Mutations::AddTodoItem
+    field :complete_todo_item, mutation: Mutations::CompleteTodoItem
   end
 end

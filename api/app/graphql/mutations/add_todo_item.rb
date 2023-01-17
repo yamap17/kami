@@ -1,13 +1,13 @@
 module Mutations
   class AddTodoItem < BaseMutation
-    field :TodoItem, Types::TodoItemType, null: true
+    field :todo_item, Types::TodoItemType, null: false
 
     argument :title, String, required: true
 
     def resolve(title:)
       todo_item = TodoItem.create!(title: title, completed: false)
       {
-        TodoItem: todo_item
+        todo_item: todo_item
       }
     end
   end

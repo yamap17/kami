@@ -11,11 +11,11 @@ default: &default
 
 development:
   <<: *default
-  database: <%= ENV.fetch('DATABASE_DEVELOPMENT_NAME', 'iketeru_development') %>
+  database: <%= ENV.fetch('DATABASE_DEVELOPMENT_NAME', 'kami_development') %>
 
 test:
   <<: *default
-  database: api_test
+  database: kami_test
 
 #
 production:

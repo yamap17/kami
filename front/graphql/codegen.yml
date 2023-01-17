@@ -1,9 +1,10 @@
 # codegen.yml
-schema: graphql/schema.graphql
+schema: http://localhost:3033/graphql
+overwrite: true
 documents: graphql/**/*.graphql
 generates:
-  graphql/types.ts:
+  graphql/csrApi.ts:
     plugins:
       - typescript
       - typescript-operations
-      - typescript-graphql-request
+      - typescript-urql

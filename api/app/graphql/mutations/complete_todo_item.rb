@@ -1,6 +1,6 @@
 module Mutations
   class CompleteTodoItem < BaseMutation
-    field :TodoItem, Types::TodoItemType, null: true
+    field :todo_item, Types::TodoItemType, null: false
 
     argument :id, ID, required: true
 
@@ -8,7 +8,7 @@ module Mutations
       todo_item = TodoItem.find(id)
       todo_item.update!(completed: true)
       {
-        TodoItem: todo_item
+        todo_item: todo_item
       }
     end
   end
